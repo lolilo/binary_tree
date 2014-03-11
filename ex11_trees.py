@@ -48,6 +48,7 @@ def depth_first_traversal(node):
     elif bool(node.get_left()):
         depth_first_traversal(node.get_left())
 
+    # print 'this is the end node'
     return ''
     # what exactly is happening when it reaches a terminal node? Doesn't return anything then?
 
