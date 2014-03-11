@@ -35,40 +35,16 @@ class BinaryTreeNode:
     def set_value(self, number):
         self.value = number
 
-
 def depth_first_traversal(node):
     print node.value,
-
     # two children
-    if (bool(node.get_left()) and bool(node.get_right())):
+    if (node.get_left() and node.get_right()):
         depth_first_traversal(node.get_left())
         depth_first_traversal(node.get_right())
     
     # one child
-    elif bool(node.get_left()):
+    elif node.get_left():
         depth_first_traversal(node.get_left())
-
-    # print 'this is the end node'
-    return ''
-    # what exactly is happening when it reaches a terminal node? Doesn't return anything then?
-
-
-
-
-
-    # one child
-    
-
-
-    # elif bool(node.get_left()):
-    #     test(node.get_left())
-    
-
-
-    # no children
-    # else: 
-    #     print 'the end'
-    #     return node.value # this returns None...how to circumvent? 
 
 # The easiest way to do a depth-first traversal is with a recursive function. It
 # should print the value of the current node, then call itself on the left, then
@@ -113,8 +89,7 @@ right.set_left(r_left)
 right.set_right(r_right)
 
 
-out = depth_first_traversal(root)
-print out
 expected = "0 1 2 3 4 5 6"
-print "Your output", out
-print "Expected output", expected
+print "Your output", 
+depth_first_traversal(root)
+print "\nExpected output", expected
