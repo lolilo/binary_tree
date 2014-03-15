@@ -46,6 +46,15 @@ def depth_first_traversal(node):
     elif node.get_left():
         depth_first_traversal(node.get_left())
 
+
+def test(node):
+    if node == None:
+        return
+    
+    print node.value,
+    test(node.get_left())
+    test(node.get_right())
+
 # The easiest way to do a depth-first traversal is with a recursive function. It
 # should print the value of the current node, then call itself on the left, then
 # right node in order.
@@ -91,5 +100,6 @@ right.set_right(r_right)
 
 expected = "0 1 2 3 4 5 6"
 print "Your output", 
-depth_first_traversal(root)
+# depth_first_traversal(root)
+test(root)
 print "\nExpected output", expected
